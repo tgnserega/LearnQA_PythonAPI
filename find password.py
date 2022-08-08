@@ -43,6 +43,6 @@ for password in passwords:
 
     response2 = requests.get("https://playground.learnqa.ru/ajax/api/check_auth_cookie", cookies=cookies)
     if response2.text == "You are NOT authorized":
-        print(Fore.RED + f"Login:{login}, Password: {password}, Response: {response2.text}")
+        print(Fore.RED + f"Login: {login}, Password: {password}, Response: {response2.text}")
     else:
-        print(Fore.GREEN + f"Login:{login}, Password: {password}, Response: {response2.text}")
+        print(Fore.GREEN + f"Login: {login}, Password: {password}, Response: {response2.text}")
