@@ -46,7 +46,7 @@ class TestUserAgent:
         observed_browser = response['browser']
         observed_device = response['device']
 
-        assert expected_platform == observed_platform, f"User Agent: {user_agent}. Not correct platform. Expected: {expected_platform}. Observed: {observed_platform}"
+        assert expected_platform == observed_platform, f"User Agent: {user_agent}.  Not correct platform. Expected: {expected_platform}. Observed: {observed_platform}"
         assert expected_browser == observed_browser, f"User Agent: {user_agent}. Not correct browser. Expected: {expected_browser}. Observed: {observed_browser}"
         assert expected_device == observed_device, f"User Agent: {user_agent}. Not correct device. Expected: {expected_device}. Observed: {observed_device}"
 
