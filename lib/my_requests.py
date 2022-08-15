@@ -3,6 +3,7 @@ from lib.logger import Logger
 import allure
 from environment import ENV_OBJECT
 
+
 class MyRequests:
     @staticmethod
     def post(url: str, data: dict = None, headers: dict = None, cookies: dict = None):
